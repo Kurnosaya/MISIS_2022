@@ -56,7 +56,7 @@ def handle_text(message):
 
 @bot.callback_query_handler(func=lambda call: True)
 def callback_worker(call):
-    global expr, prev_expression
+    global expr
     if call.data == 'AC':
         expr = ''
     elif call.data == '=':
