@@ -54,12 +54,6 @@ def handle_text(message):
     else:
         bot.send_message(message.chat.id, f'Попробуй еще раз через /calc')
 
-
-
-
-
-
-
 @bot.callback_query_handler(func=lambda call: True)
 def callback_worker(call):
     global expr, prev_expression
@@ -86,13 +80,6 @@ def callback_worker(call):
         except:
             pass
 
-    # if expr =='':
-    #     bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text = '0', reply_markup=keyboard)
-    #
-    # else:
-    #     bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text=expr, reply_markup=keyboard)
-    # if expr == 'Oops...':
-    #     expr = ''
 
 bot.polling(none_stop=True, interval=0)
 
